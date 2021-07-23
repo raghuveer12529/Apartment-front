@@ -14,7 +14,7 @@ const App = () => {
           component= {LoginScreen}
         />
         <Stack.Screen
-          name="Apartment"
+          name="Error Page"
           component= {ErrorPage}
         />
       </Stack.Navigator>
