@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import { Alert, Button, TextInput, View, StyleSheet , Text } from 'react-native';
 
-export default class App extends Component {
+export default class RegisterScreen extends Component {
   constructor(props) {
     super(props);
     
     this.state = {
       email: '',
+      phoneNumber : '',
       password: '',
+
     };
   }
   
@@ -45,27 +47,37 @@ onLogin = async() => {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.heading}>Apartment App</Text>
         <TextInput
           value={this.state.email}
           onChangeText={(email) => this.setState({ email })}
-          placeholder={'email'}
+          placeholder={'EMAIL'}
           style={styles.input}
         />
         <TextInput
           value={this.state.password}
           onChangeText={(password) => this.setState({ password })}
-          placeholder={'Password'}
+          placeholder={'PASSWORD'}
           secureTextEntry={true}
           style={styles.input}
         />
+
+        <TextInput
+          value={this.state.phoneNumber}
+          onChangeText={(phoneNumber) => this.setState({ phoneNumber })}
+          placeholder={'PHONE NUMBER'}
+          style={styles.input}
+        />
         
-        <Button
-          title={'Login'}
-          style={styles.button}
+        <View style={styles.button}>
+            <Button
+          title={'REGISTER'}
+          
           onPress={this.onLogin}
         />
-      </View>
+        </View>
+        </View>
+        
+      
     );
   }
 }
@@ -83,12 +95,17 @@ const styles = StyleSheet.create({
     padding: 10,
     borderWidth: 1,
     borderColor: 'black',
-    marginBottom: 10,
+    marginBottom: 20,
     borderRadius: 5
   },
   heading :{
     fontSize:20,
     marginBottom:20,
     fontWeight:'bold'
+  },
+  button:{
+    //   borderWidth:2
+    width:200,
+    marginTop:30
   }  
 });
